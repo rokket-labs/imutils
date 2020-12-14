@@ -9,8 +9,8 @@ class WebcamVideoStream:
 		self.stream = cv2.VideoCapture(src)
 		
 		if resolution:
-			self.stream.set(3, resolution[0])
-			self.stream.set(4, resolution[1])
+			self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, resolution[0])
+			self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, resolution[1])
 
 		(self.grabbed, self.frame) = self.stream.read()
 
